@@ -10,4 +10,23 @@
       <ion-title size="large">perfilUsuario</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card *ngIf="usuarioActivo">
+    <img [src]="usuarioActivo.image" >
+
+  <ion-card-header>
+<ion-item>
+  <ion-badge slot="start">{{usuarioActivo.gender}}</ion-badge>
+</ion-item>
+  <ion-card-title> {{usuarioActivo.firstName | uppercase}} {{usuarioActivo.lastName | uppercase}}</ion-card-title>
+  <ion-card-subtitle>{{usuarioActivo.username | uppercase}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+  <ion-label>Contacto:</ion-label>
+  <br/>
+    <ion-card-subtitle>{{usuarioActivo.email}}</ion-card-subtitle>
+    <ion-button routerLink="/productos">Ir a catalogo</ion-button>
+  </ion-card-content>
+  </ion-card>
+
 </ion-content>
